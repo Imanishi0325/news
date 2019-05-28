@@ -31,7 +31,7 @@
             <li class="divider"></li>
             <li><a href="#!">three</a></li>
             <% else %>
-            <li><a href="badges.html">ログイン</a></li>
+            <li><a><%= link_to "ログイン", new_user_session_path, method: :get %></a></li>
             <li><a><%= link_to "新規登録", new_user_registration_path, method: :get %></a></li> 
             <% end %>
           </ul>
