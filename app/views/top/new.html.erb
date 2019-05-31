@@ -1,10 +1,10 @@
 <div class="container">
   <%= form_with url: '/top/new' do |form| %>
-  <h4 class="title" style="margin-bottom:50px">新規投稿</h4>
+  <h4 class="title" style="margin-bottom:25px">新規投稿</h4>
     <form>
       <div class="input-field">
-        <textarea type="text" id="textarea" name="text" class="textarea" style="height:350px"></textarea>
-        <label class="active" for="textarea">本文</label>
+        <textarea type="text" id="textarea" name="text" class="textarea" placeholder="本文" style="height:350px"></textarea>
+        <!--<label class="active" for="textarea">本文</label>-->
       </div>
       <button class="btn" type="submit" value="SENT" style="margin-top:15px">投稿する</button>
     </form>
