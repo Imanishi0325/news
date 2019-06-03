@@ -1,0 +1,31 @@
+body, html {
+  height: 100%;
+  background-color: white;
+}
+
+.article {
+  text-align: center;
+}
+
+h4 {
+  font-family: sans-serif;
+  color: #4a4a4a;
+  line-height: 1.77;
+}
+
+.article-text h6 {
+  /*overflow: hidden;*/
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin: 20px;
+  line-height: 1.0;
+  text-align: left;
+  }
+
+.article-text p {
+  overflow: hidden;
+  font-family: sans-serif;
+  color: #4a4a4a;
+  height: 3em;
+}
+  

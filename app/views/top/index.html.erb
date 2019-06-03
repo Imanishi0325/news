@@ -1,6 +1,12 @@
 <div class="container">
-    <h4>投稿一覧</h4>
-    <% @articles.each do |article| %>
-    <p><%= simple_format(article.text) %></p>
-    <% end %>
+  <h4 class="center-align">投稿一覧</h4>
+  
+    <div class="article">
+      <div class="article-text">
+          <% @articles.each do |article| %>
+          <h6><%= simple_format(article.text) %></h6>
+          <% end %>
+      </div>
+    </div>
+    
 </div>
