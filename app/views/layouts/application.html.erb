@@ -28,7 +28,7 @@
             <ul id="dropdown1" class="dropdown-content">
             <li><a href='/top/new'>投稿する</a></li>
             <li class="divider"></li>
-            <li><a href="#!">マイページ</a></li>
+            <li><%= link_to "マイページ",user_path(current_user) %></li>
             <li class="divider"></li>
             <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <% else %>
