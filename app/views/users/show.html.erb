@@ -1,0 +1,14 @@
+<div class="container">
+  <h4 class="center-align">
+    <%= @nickname %>さんの投稿一覧
+  </h4>
+  
+    <div class="article">
+      <div class="article-text">
+          <% @articles.each do |article| %>
+          <h6><%= simple_format(article.text) %></h6>
+          <% end %>
+      </div>
+    </div>
+    <%= paginate(@articles) %>
+</div>
