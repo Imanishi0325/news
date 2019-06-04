@@ -10,6 +10,11 @@ class TopController < ApplicationController
     Article.create(text: article_params[:text], user_id: current_user.id)
   end
   
+  def destroy
+    article = Article.find(params[:id])
+    article.destroy if article.user_id == current_user.id
+  end
+  
   private
   def article_params
     params.permit(:text)
