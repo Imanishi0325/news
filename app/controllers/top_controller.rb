@@ -19,6 +19,11 @@ class TopController < ApplicationController
     @article = Article.find(params[:id])
   end
   
+  def update
+    article = Article.find(params[:id])
+    article.update if article.user_id == current_user.id
+  end
+  
   private
   def article_params
     params.permit(:text)
