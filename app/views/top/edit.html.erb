@@ -1,0 +1,12 @@
+<div class="container">
+  <%= form_tag("/top/#{@article.id}", method: :patch) do %>
+  <h4 class="title" style="margin-bottom:25px">編集画面</h4>
+    <form>
+      <div class="input-field">
+        <textarea type="text" id="textarea" name="text" class="textarea" placeholder="本文" style="height:350px"></textarea>
+        <!--<label class="active" for="textarea">本文</label>-->
+      </div>
+      <button class="btn" type="submit" value="SENT" style="margin-top:15px">更新する</button>
+    </form>
+  <% end %>
+</div>
