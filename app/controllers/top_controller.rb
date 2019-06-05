@@ -15,6 +15,10 @@ class TopController < ApplicationController
     article.destroy if article.user_id == current_user.id
   end
   
+  def edit
+    @article = Article.find(params[:id])
+  end
+  
   private
   def article_params
     params.permit(:text)
