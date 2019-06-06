@@ -6,23 +6,30 @@ body, html {
 h4 {
   text-align: center;
   font-family: sans-serif;
+  font-weight: bold;
   color: #4a4a4a;
   line-height: 1.77;
 }
 
 .article {
-  border: 3px solid #ccc;
+  border: solid 3px #ccc;
+  outline: solid 1px #ccc;
+  outline-offset: 1px;
   padding: 15px;
   margin: 20px;
+  position: relative;
   line-height: 2.0;
   text-align: left;
 }
 
 p {
-  overflow: hidden;
+  overflow: scroll;
   font-family: sans-serif;
+  font-weight: bold;
   color: #4a4a4a;
   height: 6em;
+  margin: 0;
+  padding: 0;
 }
   
 .pagination {
@@ -31,4 +38,8 @@ p {
 
 .btn a {
   color: white;
+}
+
+textarea {
+  resize: none;
 }
