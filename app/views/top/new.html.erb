@@ -2,10 +2,11 @@
   <%= form_tag('/top', method: :post) do %>
   <h4 class="title" style="margin-bottom:25px">新規投稿</h4>
     
-    <form>
-      <% if @article.errors.any? %>
+    <% if @article.errors.any? %>
         <p>500文字以内で入力して下さい。</p>
-      <% end %>
+    <% end %>
+    
+    <form>
       <div class="input-field">
         <textarea type="text" id="textarea" name="text" class="textarea" placeholder="本文" style="height:350px"></textarea>
       </div>
