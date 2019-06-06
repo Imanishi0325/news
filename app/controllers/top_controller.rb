@@ -7,7 +7,12 @@ class TopController < ApplicationController
   end
   
   def create
-    Article.create(text: article_params[:text], user_id: current_user.id)
+    @article = Article.create(text: article_params[:text], user_id: current_user.id)
+  if @article.save
+    redirect_to :root #成功の場合
+  else        
+    render 'new' #失敗の場合 
+  end
   end
   
   def destroy
