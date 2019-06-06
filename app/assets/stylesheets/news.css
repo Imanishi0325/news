@@ -3,30 +3,26 @@ body, html {
   background-color: white;
 }
 
-.article {
-  text-align: center;
-}
-
 h4 {
+  text-align: center;
   font-family: sans-serif;
   color: #4a4a4a;
   line-height: 1.77;
 }
 
-.article-text h6 {
-  /*overflow: hidden;*/
-  border: 1px solid #ccc;
+.article {
+  border: 3px solid #ccc;
   padding: 15px;
   margin: 20px;
-  line-height: 1.0;
+  line-height: 2.0;
   text-align: left;
-  }
+}
 
-.article-text p {
+p {
   overflow: hidden;
   font-family: sans-serif;
   color: #4a4a4a;
-  height: 3em;
+  height: 6em;
 }
   
 .pagination {

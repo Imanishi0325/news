@@ -21,7 +21,9 @@ class TopController < ApplicationController
   
   def update
     article = Article.find(params[:id])
-    article.update if article.user_id == current_user.id
+    if article.user_id == current_user.id
+      article.update(article_params)
+    end
   end
   
   private
