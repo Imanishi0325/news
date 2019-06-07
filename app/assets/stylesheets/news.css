@@ -23,6 +23,7 @@ h4 {
 }
 
 p {
+  white-space: normal;
   overflow: scroll;
   font-family: sans-serif;
   font-weight: bold;

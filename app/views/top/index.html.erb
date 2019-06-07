@@ -2,7 +2,7 @@
     <h4>投稿一覧</h4>
       <% @articles.each do |article| %>
         <div class="article">
-          <%= simple_format(article.text) %>
+          <p><%= article.text %></p>
         </div>
       <% end %>
     <%= paginate(@articles) %>
