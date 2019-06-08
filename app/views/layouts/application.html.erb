@@ -41,16 +41,6 @@
         </ul>
       </div>
     </nav>
-      
-    <% if flash[:notice] %>
-      <p class="notice">
-        <%= flash[:notice] %>
-      </p>
-    <% else %>
-      <p class="alert">
-        <%= flash[:alert] %>
-      </p>
-    <% end %>
     
     <%= yield %>
     
@@ -62,5 +52,12 @@
         $(".dropdown-button").dropdown();
       });
     </script>
+    
+    <% unless flash.empty? %>
+      <script>
+        toastr.success('投稿が完了しました')
+      </script>
+    <% end %>
+    
   </body>
 </html>
