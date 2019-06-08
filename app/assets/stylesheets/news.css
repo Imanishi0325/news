@@ -9,6 +9,12 @@ h4 {
   font-weight: bold;
   color: #4a4a4a;
   line-height: 1.77;
+  position: relative;
+}
+
+.container {
+  position: relative;
+  top: 15px;
 }
 
 .article {
@@ -23,14 +29,39 @@ h4 {
 }
 
 p {
-  white-space: normal;
-  overflow: scroll;
+  overflow: hidden;
   font-family: sans-serif;
   font-weight: bold;
   color: #4a4a4a;
   height: 6em;
   margin: 0;
   padding: 0;
+}
+  
+.notice {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f3c0c0;
+  border-color: #f3c0c0;
+  color: #3e3a3a;
+  height: 50px
+}
+
+.alert {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00FF7F;
+  border-color: #00FF7F;
+  color: #3e3a3a;
+  height: 50px
+}
+
+.form {
+  margin-top: 100px;
 }
   
 .pagination {
