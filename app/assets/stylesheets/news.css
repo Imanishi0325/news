@@ -16,6 +16,12 @@ h4 {
   position: relative;
 }
 
+.container-form {
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .article {
   border: solid 3px #ccc;
   outline: solid 1px #ccc;
