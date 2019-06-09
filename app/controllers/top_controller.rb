@@ -10,10 +10,10 @@ class TopController < ApplicationController
   def create
     @article = Article.create(text: article_params[:text], user_id: current_user.id)
   if @article.save
-    flash[:notice] = "投稿を作成しました。"
+    flash[:notice] = "投稿が完了しました。"
     redirect_to :root #成功の場合
   else
-    flash.now[:alert] = "500文字以内で入力してください。"
+    flash[:alert] = "500文字以内で入力してください。"
     render 'new' #失敗の場合 
   end
   end

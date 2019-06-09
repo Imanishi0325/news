@@ -53,9 +53,11 @@
       });
     </script>
     
-    <% unless flash.empty? %>
+    <% flash.each do |type, msg| %>
+      <% type = 'info' if type == 'notice' %>
+      <% type = 'error' if type == 'alert' %>
       <script>
-        toastr.success('投稿が完了しました')
+        toastr['<%= type %>']('<%= msg %>');
       </script>
     <% end %>
     

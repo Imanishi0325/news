@@ -14,7 +14,6 @@ h4 {
 
 .container {
   position: relative;
-  top: 15px;
 }
 
 .article {
@@ -36,28 +35,6 @@ p {
   height: 6em;
   margin: 0;
   padding: 0;
-}
-  
-.notice {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #f3c0c0;
-  border-color: #f3c0c0;
-  color: #3e3a3a;
-  height: 50px
-}
-
-.alert {
-  text-align: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #00FF7F;
-  border-color: #00FF7F;
-  color: #3e3a3a;
-  height: 50px
 }
 
 .form {
