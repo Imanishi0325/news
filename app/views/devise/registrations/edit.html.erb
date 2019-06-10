@@ -32,6 +32,15 @@
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
     <%= f.password_field :current_password, autocomplete: "current-password" %>
   </div>
+  
+   <div class="field">
+    <%= f.label :nickname %><br />
+    <%= f.text_field :nickname, placeholder: 'ニックネームを入力(必須)' %>
+  </div>
+  
+  <div class="field">
+    <%= f.file_field :image %><br />
+  </div>
 
   <div class="actions">
     <button class="btn" type="submit" value="SENT" style="margin-top:15px">更新する</button>
