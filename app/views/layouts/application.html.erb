@@ -56,6 +56,8 @@
     <% flash.each do |type, msg| %>
       <% type = 'info' if type == 'notice' %>
       <% type = 'error' if type == 'alert' %>
+      <% type = 'success' if type == 'success' %>
+      <% type = 'warning' if type == 'danger' %>
       <script>
         toastr['<%= type %>']('<%= msg %>');
       </script>
