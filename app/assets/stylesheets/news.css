@@ -10,6 +10,18 @@ h4 {
   color: #4a4a4a;
   line-height: 1.77;
   position: relative;
+  }
+  
+h5 {
+  line-height: 60px;
+  font-size: 35px;
+  margin-top: 15px;
+  color: #4a4a4a;
+}
+  
+h5 span {
+  color: #999;
+  font-size: 85%;
 }
 
 .container {
@@ -57,4 +69,21 @@ p {
 
 textarea {
   resize: none;
+}
+
+.container-user {
+  display: inline-block;
+  width: 450px;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  vertical-align: middle;
+}
+
+.user-image img {
+  float: left;
+  border-radius: 50%;
+    width:  100px;
+    height: 100px;
+    overflow: hidden;
+    margin-right: 10px;
 }

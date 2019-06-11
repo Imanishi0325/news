@@ -1,6 +1,9 @@
 <div class="container">
-  <div class="user-image"><%= image_tag current_user.image %></div>
-  <h4><%= @nickname %>さんの投稿一覧</h4>
+  <div class="container-user">
+      <div class="user-image"><%= image_tag "Noimage_image.png", class:image_url %></div>
+      <!--<div class="user-image"><%= image_tag current_user.image %></div>-->
+      <h5><%= current_user.nickname %><span>さんの投稿</span></h5>
+  </div>
   
     <% @articles.each do |article| %>
         <div class="article">
