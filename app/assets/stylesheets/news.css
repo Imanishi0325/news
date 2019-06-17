@@ -46,12 +46,17 @@ h5 span {
 }
 
 p {
+  overflow: hidden;
   font-family: sans-serif;
   font-weight: bold;
   color: #4a4a4a;
   height: 6em;
   margin: 0;
   padding: 0;
+}
+
+.more {
+  text-align: right;
 }
 
 
@@ -65,10 +70,6 @@ p {
 
 .btn a {
   color: white;
-}
-
-.more {
-  text-align: right;
 }
 
 textarea {

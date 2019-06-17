@@ -1,5 +1,7 @@
 {
   "name": "news",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "readmore-js": "^2.2.1"
+  }
 }

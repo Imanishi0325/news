@@ -2,20 +2,41 @@
     <h4>投稿一覧</h4>
     <% @articles.each do |article| %> 
         <div class="article">
-          <% if article.text.length > 185 %>
-          <p><%= article.text.truncate(185) %></p> 
-          <div class="more"><%= link_to '続きを見る', '', class: "read-more-#{article.text}" %></div>
-          <script type="text/javascript">
-            $('.read-more-<%= article.text %>').on('click', function(e) {
-              e.preventDefault()
-              $(this).parent().html('<%= escape_javascript article.text %>')
-            })
-          </script>
-          <% else %>
+            <script src="jquery.collapser.js"></script>
             <p><%= article.text %></p>
-          <% end %>
+              <script stype="javascript/text">
+              $('p').collapser({
+	            mode: 'words',
+	            truncate: 20
+              });
+              </script>
+              
+              <!--  $('.myElement').collapser({-->
+            	 <!-- target: 'next',-->
+              <!--	mode: 'block',-->
+              <!--	speed: 'slow',-->
+              <!--	truncate: 2,-->
+              <!--	ellipsis: '...',-->
+              <!--	effect: 'fade',-->
+              <!--	controlBtn: 'dsfdsf',-->
+              <!--	showText: 'Show more',-->
+              <!--	hideText: 'Hide text',-->
+              <!--	showClass: 'show-class',-->
+              <!--	hideClass: 'hide-class',-->
+              <!--	atStart: 'hide',-->
+              <!--	lockHide: false,-->
+              <!--	dynamic: false,-->
+              <!--	changeText: false,-->
+              <!--	beforeShow: null,-->
+              <!--	afterShow: null,-->
+              <!--	beforeHide: null,-->
+              <!--	afterHide: null-->
+              <!--});-->
+              
+              
+              
         </div>
-      <% end %>
+    <% end %>
     <%= paginate(@articles) %>
 </div>
     
