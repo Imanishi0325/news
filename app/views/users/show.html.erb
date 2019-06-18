@@ -10,11 +10,10 @@
   
     <% @articles.each do |article| %>
         <div class="article">
-            <p><%= article.text.truncate(185) %></p>
+            <p><%= article.text %></p>
             <% if user_signed_in? && current_user.id == article.user_id %>
               <div class="btn"><%= link_to '削除', "/top/#{article.id}", method: :delete %></div>
               <div class="btn"><%= link_to '編集', "/top/#{article.id}/edit", method: :get %></div>
-              <div class="more"><%= link_to_next_page @articles, '続きを見る', remote: true, id: 'view_more' %></div>
             <% end %>
         </div>
     <% end %>

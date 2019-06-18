@@ -2,39 +2,7 @@
     <h4>投稿一覧</h4>
     <% @articles.each do |article| %> 
         <div class="article">
-            <script src="jquery.collapser.js"></script>
             <p><%= article.text %></p>
-              <script stype="javascript/text">
-              $('p').collapser({
-	            mode: 'words',
-	            truncate: 20
-              });
-              </script>
-              
-              <!--  $('.myElement').collapser({-->
-            	 <!-- target: 'next',-->
-              <!--	mode: 'block',-->
-              <!--	speed: 'slow',-->
-              <!--	truncate: 2,-->
-              <!--	ellipsis: '...',-->
-              <!--	effect: 'fade',-->
-              <!--	controlBtn: 'dsfdsf',-->
-              <!--	showText: 'Show more',-->
-              <!--	hideText: 'Hide text',-->
-              <!--	showClass: 'show-class',-->
-              <!--	hideClass: 'hide-class',-->
-              <!--	atStart: 'hide',-->
-              <!--	lockHide: false,-->
-              <!--	dynamic: false,-->
-              <!--	changeText: false,-->
-              <!--	beforeShow: null,-->
-              <!--	afterShow: null,-->
-              <!--	beforeHide: null,-->
-              <!--	afterHide: null-->
-              <!--});-->
-              
-              
-              
         </div>
     <% end %>
     <%= paginate(@articles) %>
