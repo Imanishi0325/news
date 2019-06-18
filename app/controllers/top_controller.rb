@@ -3,6 +3,7 @@ class TopController < ApplicationController
   
   def index
     @articles = Article.order("created_at DESC").page(params[:page]).per(10)
+    @comments = @article.comments.includes(:user) 
   end
   
   def new
