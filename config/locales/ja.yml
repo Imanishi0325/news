@@ -1,9 +1,12 @@
 ja:
   attributes:
-    email: メールアドレス
-    password: パスワード
+    email: メールアドレス(必須)
+    password: パスワード(必須)
+    password_confirmation: パスワード確認(必須)
+    nickname: ニックネーム(必須)
     group_id: グループ名
     user: ユーザー
+    current_password: 現在のパスワード
   date:
     abbr_day_names:
     - 日

@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   def create
-    @comment = Comment.create(text: comment_params[:text], top_id: comment_params[:article_id], user_id: current_user.id)
+    @comment = Comment.create(text: comment_params[:text], article_id: comment_params[:article_id], user_id: current_user.id)
     redirect_to "/top/#{@comment.article.id}"
   end
   
@@ -8,5 +8,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.permit(:text, :article_id)
   end
-  
 end

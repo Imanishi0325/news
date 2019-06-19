@@ -1,9 +1,8 @@
 class TopController < ApplicationController
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
   
   def index
     @articles = Article.order("created_at DESC").page(params[:page]).per(10)
-    @comments = @article.comments.includes(:user) 
   end
   
   def new
@@ -35,6 +34,11 @@ class TopController < ApplicationController
     if article.user_id == current_user.id
       article.update(article_params)
     end
+  end
+  
+  def show
+    @article = Article.find(params[:id])
+    @comments = @article.comments.includes(:user).all
   end
   
   private
