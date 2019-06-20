@@ -4,6 +4,11 @@ class CommentsController < ApplicationController
     redirect_to "/top/#{@comment.article.id}"
   end
   
+  def destroy　#コメントを投稿したユーザーのみコメントを削除できるようにしたい
+    @comment = Comment.find(params[:id]).destroy
+    redirect_to "/top/#{@comment.article.id}"
+  end
+  
   private 
   def comment_params
     params.permit(:text, :top_id)

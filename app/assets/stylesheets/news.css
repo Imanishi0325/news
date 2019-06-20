@@ -42,7 +42,8 @@ h7 {
 
 .comments-form {
   margin-left: 35px;
-  margin-right: auto;
+  margin-right: 40px;
+  margin-bottom: 30px;
 }
 
 .comments {
@@ -54,10 +55,7 @@ h7 {
 
 
 .comments-form textarea {
-  width: 932px;
-  height: 120px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 150px;
 }
 
 .article {
