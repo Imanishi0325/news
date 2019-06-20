@@ -3,9 +3,7 @@
     <% @articles.each do |article| %> 
         <div class="article">
             <p><%= article.text %></p>
-            <% if user_signed_in? %>
             <div class="btn"><%= link_to '詳細', "/top/#{article.id}", method: :get %></div>
-            <% end %>
         </div>
     <% end %>
     <%= paginate(@articles) %>

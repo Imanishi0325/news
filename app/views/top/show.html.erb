@@ -4,6 +4,7 @@
     <p class="detail"><%= @article.text %></p>
   </div>
   
+  <% if user_signed_in? %>
   <div class="comments-form"> 
       <% if current_user %>
         <%= form_tag("/top/#{@article.id}/comments", method: :post) do %>
@@ -26,6 +27,5 @@
         <% end %>
       <% end %>
     </div>
-    
-    
+  <% end %>
 </div>
