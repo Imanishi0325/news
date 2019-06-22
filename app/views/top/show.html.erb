@@ -2,10 +2,11 @@
   <h4>投稿詳細ページ</h4>
   <div class="article">
     <p class="detail"><%= @article.text %></p>
+    <id="comments_button" button class="btn">コメントする</button>
   </div>
   
   <% if user_signed_in? %>
-  <div id="comments-form-move" class="comments-form">
+  <div class="comments-form">
     <%= render partial: "top/show", locals: {comments: @comment, article: @article} %> 
     </div>
   <% end %>
