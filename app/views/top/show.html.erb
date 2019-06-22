@@ -2,13 +2,28 @@
   <h4>投稿詳細ページ</h4>
   <div class="article">
     <p class="detail"><%= @article.text %></p>
-    <id="comments_button" button class="btn">コメントする</button>
   </div>
   
   <% if user_signed_in? %>
   <div class="comments-form">
-    <%= render partial: "top/show", locals: {comments: @comment, article: @article} %> 
+  <id class="btn">コメントする</id>
+    
+    <div class="form-area">
+      <% if current_user %>
+        <%= form_tag("/top/#{@article.id}/comments", method: :post) do %>
+          <div class="comments-text"><textarea name="text" placeholder="コメントする"></textarea></div>
+          <button class="btn" type="submit" value="SENT" style="margin-top:15px">投稿する</button>
+        <% end %>
+      <% end %>
     </div>
+    <script>
+    $(document).ready(function(){
+      $('.btn').click(function () {
+      $('form-area').show();
+      });
+    });
+    </script>
+  </div>
   <% end %>
 
   <div class="comments">   
