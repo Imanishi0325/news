@@ -5,8 +5,9 @@ class CommentsController < ApplicationController
   end
   
   def destroy
-    comment = Comment.find(params[:id])
-    comment.destroy if comment.user.id == current_user.id
+    @comment = Comment.find(params[:id])
+    @article = @comment.article
+    @comment.destroy if @comment.user.id == current_user.id
     redirect_to "/top/#{@comment.article.id}"
   end
   

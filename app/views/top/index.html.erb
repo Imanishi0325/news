@@ -3,7 +3,7 @@
     <% @articles.each do |article| %> 
         <div class="article">
             <p><%= article.text %></p>
-            <div class="btn"><%= link_to '詳細', "/top/#{article.id}", method: :get %></div>
+            <div class="read_more"><%= link_to '詳細', "/top/#{article.id}", method: :get %></div>
         </div>
     <% end %>
     <%= paginate(@articles) %>

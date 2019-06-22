@@ -131,3 +131,7 @@ textarea {
 .image-field {
   height: 50px
 }
+
+.read_more {
+  text-align: right;
+}
