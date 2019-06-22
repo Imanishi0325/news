@@ -5,13 +5,8 @@
   </div>
   
   <% if user_signed_in? %>
-  <div id="comments-form-move" class="comments-form"> 
-      <% if current_user %>
-        <%= form_tag("/top/#{@article.id}/comments", method: :post) do %>
-          <div class="comments-text"><textarea name="text" placeholder="コメントする"></textarea></div>
-          <button class="btn" type="submit" value="SENT" style="margin-top:15px">投稿する</button>
-        <% end %>
-      <% end %>
+  <div id="comments-form-move" class="comments-form">
+    <%= render partial: "top/show", locals: {comments: @comment, article: @article} %> 
     </div>
   <% end %>
 
