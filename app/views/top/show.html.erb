@@ -1,28 +1,35 @@
 <div class="container">
   <h4>投稿詳細ページ</h4>
   <div class="article">
-    <p class="detail"><%= @article.text %></p>
+      <strong><%= link_to @article.user.nickname %></strong>
+     <p class="detail"><%= @article.text %></p>
+    <id class="btn" id="btn">コメントする</id>
   </div>
   
   <% if user_signed_in? %>
   <div class="comments-form">
-  <id class="btn">コメントする</id>
     
-    <div class="form-area">
-      <% if current_user %>
-        <%= form_tag("/top/#{@article.id}/comments", method: :post) do %>
-          <div class="comments-text"><textarea name="text" placeholder="コメントする"></textarea></div>
-          <button class="btn" type="submit" value="SENT" style="margin-top:15px">投稿する</button>
+      <div class="formarea">
+        <% if current_user %>
+          <%= form_tag("/top/#{@article.id}/comments", method: :post) do %>
+            <div class="comments-text"><textarea name="text" placeholder="コメントする"></textarea></div>
+            <button class="btn" type="submit" value="SENT" style="margin-top:15px">投稿する</button>
+          <% end %>
         <% end %>
-      <% end %>
-    </div>
+      </div>
+      
     <script>
-    $(document).ready(function(){
-      $('.btn').click(function () {
-      $('form-area').show();
-      });
-    });
+    $(function() {
+        $('#btn').on('click', function() {
+          if($('.formarea').css('display')=='none'){
+              $('.formarea').slideDown();
+          } else {
+              $('.formarea').slideUp();
+          }
+        });
+    });  
     </script>
+    
   </div>
   <% end %>
 

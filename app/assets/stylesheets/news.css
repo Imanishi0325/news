@@ -136,6 +136,7 @@ textarea {
   text-align: right;
 }
 
-.form-area {
+.formarea {
   display: none;
+  margin-top: 20px;
 }

@@ -2,8 +2,9 @@
     <h4>投稿一覧</h4>
     <% @articles.each do |article| %> 
         <div class="article">
+          <strong><%= link_to article.user.nickname %></strong>
             <p><%= article.text %></p>
-            <div class="read_more"><%= link_to '詳細', "/top/#{article.id}", method: :get %></div>
+            <div class="read_more"><%= link_to '詳細を見る', "/top/#{article.id}", method: :get %></div>
         </div>
     <% end %>
     <%= paginate(@articles) %>
