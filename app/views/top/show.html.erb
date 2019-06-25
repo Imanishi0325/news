@@ -3,7 +3,6 @@
   <div class="article">
       <strong><%= link_to @article.user.nickname %></strong>
      <p class="detail"><%= @article.text %></p>
-     <button class="btn" style="margin-left: 760px;" div="btn">コメントを見る</button>
     <% if user_signed_in? %>
     <id class="btn" id="btn">コメントする</id>
     <% end %>
@@ -29,10 +28,15 @@
            }
           });
         });
+    $(function(){
+      $('.btn').on('click', function() {
+        
+      });
+    });
     </script>
    </div>
 
-  <div class="comments">
+  <div class="comments-view">
     <h4>コメント一覧</h4>
       <% if @comments %>
         <% @comments.each do |comment| %>

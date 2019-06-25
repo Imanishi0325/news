@@ -68,6 +68,13 @@ p {
   border: solid 2.5px #ccc;
 }
 
+.comments-view {
+  margin-left: 35px;
+  margin-right: 40px;
+  margin-top: 20px;
+  border: solid 2.5px #ccc;
+}
+
 .comments-personal {
   margin-top: 15px;
   margin-bottom: 15px;
