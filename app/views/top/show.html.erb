@@ -3,12 +3,14 @@
   <div class="article">
       <strong><%= link_to @article.user.nickname %></strong>
      <p class="detail"><%= @article.text %></p>
+     <button class="btn" style="margin-left: 760px;" div="btn">コメントを見る</button>
+    <% if user_signed_in? %>
     <id class="btn" id="btn">コメントする</id>
+    <% end %>
   </div>
   
   <% if user_signed_in? %>
   <div class="comments-form">
-    
       <div class="formarea">
         <% if current_user %>
           <%= form_tag("/top/#{@article.id}/comments", method: :post) do %>
@@ -17,7 +19,6 @@
           <% end %>
         <% end %>
       </div>
-      
     <script>
     $(function() {
         $('#btn').on('click', function() {
@@ -25,25 +26,25 @@
               $('.formarea').slideDown();
           } else {
               $('.formarea').slideUp();
-          }
+           }
+          });
         });
-    });  
     </script>
-    
-  </div>
-  <% end %>
+   </div>
 
-  <div class="comments">   
+  <div class="comments">
+    <h4>コメント一覧</h4>
       <% if @comments %>
         <% @comments.each do |comment| %>
-        <p>
-        <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-          <%= comment.text %>
-        </p>
+        <div class="comments-personal">
+          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
+          <p class="comment-detail"><%= comment.text %></p>
           <% if comment.user_id == current_user.id %>
-            <strong><%= link_to "コメント削除", "/top/#{@article.id}/comments/#{comment.id}", method: :delete %></strong>
+          <strong><%= link_to "コメント削除", "/top/#{@article.id}/comments/#{comment.id}", method: :delete %></strong>
+        </div>
           <% end %>
         <% end %>
       <% end %>
     </div>
+  <% end %>
 </div>

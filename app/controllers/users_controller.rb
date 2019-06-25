@@ -3,10 +3,11 @@ class UsersController < ApplicationController
   def show
     @articles = Article.where(user_id: current_user.id).page(params[:page]).per(10).order("created_at DESC")
     @nickname = current_user.nickname
-    @user = User.find(params[:id])
+    @user = User.find(params[:id])  
+    @comments = Comment.where(params[:id])
   end
   
-  def edit
+  def edit_
     @user = User.find(params[:id])
   end
   
