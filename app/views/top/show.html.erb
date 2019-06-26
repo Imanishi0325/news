@@ -6,19 +6,6 @@
     <% if user_signed_in? %>
     <id class="btn" id="btn">コメントする</id>
     <% end %>
-  </div>
-  
-  <% if user_signed_in? %>
-  <div class="comments-form">
-      <div class="formarea">
-        <%= render partial: 'top/show', collection: @comment %> 
-        <% if current_user %>
-          <%= form_tag("/top/#{@article.id}/comments", method: :post, remote: true) do %>
-            <div class="comments-text"><textarea name="text" placeholder="コメントする"></textarea></div>
-            <button class="btn" type="submit" value="SENT" style="margin-top:15px">投稿する</button>
-          <% end %>
-        <% end %>
-      </div>
     <script>
     $(function() {
         $('#btn').on('click', function() {
@@ -30,21 +17,16 @@
           });
         });
     </script>
+  </div>
+  
+  <% if user_signed_in? %>
+  <div class="comments-form" id="comments-area">
+  <%= render partial: 'top/form', locals: { comment: @comment, article: @article } %>
    </div>
 
   <div class="comments-view">
     <h4>コメント一覧</h4>
-      <% if @comments %>
-        <% @comments.each do |comment| %>
-        <div class="comments-personal">
-          <strong><%= link_to comment.user.nickname, "/users/#{comment.user_id}" %>：</strong>
-          <p class="comment-detail"><%= comment.text %></p>
-          <% if comment.user_id == current_user.id %>
-          <strong><%= link_to "コメント削除", "/top/#{@article.id}/comments/#{comment.id}", method: :delete %></strong>
-        </div>
-          <% end %>
-        <% end %>
-      <% end %>
+    <%= render partial: 'top/show', locals: { comments: @comments } %>
     </div>
   <% end %>
 </div>

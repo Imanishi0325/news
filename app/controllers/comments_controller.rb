@@ -7,7 +7,6 @@ class CommentsController < ApplicationController
     @comment = Comment.find(params[:id])
     @article = @comment.article
     @comment.destroy if @comment.user.id == current_user.id
-    redirect_to "/top/#{@comment.article.id}"
   end
   
   private 
