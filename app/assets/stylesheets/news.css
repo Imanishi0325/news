@@ -42,6 +42,16 @@ p {
   padding: 0;
 }
 
+.detail {
+  overflow: visible;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #4a4a4a;
+  margin: 0px;
+  padding: 0px;
+  height: auto;
+}
+
 
 .container {
   position: relative;
@@ -80,9 +90,7 @@ p {
   margin-bottom: 15px;
   margin-left: 20px;
   margin-right: 20px;
-  border: solid 2.0px #ccc;
 }
-
 
 .comments-form textarea {
   height: 150px;
@@ -99,24 +107,15 @@ p {
   text-align: left;
 }
 
-.detail {
-  overflow: visible;
-  font-family: sans-serif;
-  font-weight: bold;
-  color: #4a4a4a;
-  margin: 5px;
-  padding: 5px;
-  height: auto;
-}
-
 .comment-detail {
   overflow: visible;
   font-family: sans-serif;
   font-weight: bold;
   color: #4a4a4a;
-  margin: 5px;
-  padding: 5px;
+  margin: 25px;
+  padding: 10px;
   height: auto;
+  border: solid 2.5px #ccc;
 }
 
 .more {
@@ -143,8 +142,9 @@ textarea {
 .container-user {
   display: inline-block;
   width: 450px;
-  margin-top: 30px;
-  margin-bottom: 20px;
+  height: 75px;
+  margin-top: 15px;
+  margin-bottom: 5px;
   vertical-align: middle;
 }
 

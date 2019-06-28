@@ -5,8 +5,8 @@
             <strong><%= link_to article.user.nickname %></strong>
             <% if article.user.image.attached? %>
              <div class="user-image"><%= image_tag article.user.image %></div>
-    <% else %>
-            <div class="user-image"><%= image_tag 'Noimage_image.png' %></div>
+            <% else %>
+              <div class="user-image"><%= image_tag 'Noimage_image.png' %></div>
             <% end %>
             <p><%= article.text %></p>
           <div class="read_more"><%= link_to '詳細を見る', "/top/#{article.id}", method: :get %></div>

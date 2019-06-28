@@ -37,7 +37,7 @@ class TopController < ApplicationController
   end
   
   def show
-    @article = Article.find(params[:id])
+    @article = Article.includes(:user).find(params[:id])
     @comments = @article.comments.includes(:user)
   end
   

@@ -2,9 +2,14 @@
   <h4>投稿詳細ページ</h4>
   <div class="article">
       <strong><%= link_to @article.user.nickname %></strong>
+      <% if @article.user.image.attached? %>
+        <div class="user-image"><%= image_tag @article.user.image %></div>
+      <% else %>
+        <div class="user-image"><%= image_tag 'Noimage_image.png' %></div>
+      <% end %>
      <p class="detail"><%= @article.text %></p>
     <% if user_signed_in? %>
-    <id class="btn" id="btn">コメントする</id>
+    <div class="btn" id="btn">コメントする</div>
     <% end %>
     <script>
     $(function() {
