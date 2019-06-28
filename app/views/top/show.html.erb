@@ -20,13 +20,28 @@
   </div>
   
   <% if user_signed_in? %>
-  <div class="comments-form" id="comments-area">
-  <%= render partial: 'top/form', locals: { comment: @comment, article: @article } %>
+  <div class="comments-form">
+    <div class="formarea">
+        <% if current_user %>
+          <%= form_tag("/top/#{@article.id}/comments", method: :post, class: "textform", remote: true) do %>
+            <div class="comments-text"><textarea class="text-form" name="text" placeholder="コメントする"></textarea></div>
+            <button class="btn" type="submit" value="SENT" style="margin-top:15px">投稿する</button>
+          <% end %>
+        <% end %>
+      </div>
    </div>
 
   <div class="comments-view">
     <h4>コメント一覧</h4>
-    <%= render partial: 'top/show', locals: { comments: @comments } %>
-    </div>
+    <% if @comments %>
+     <div class="comments-personal">
+      <% @comments.each do |comment| %>
+       
+          <%= render partial: "comments/comment", locals: { comment: comment } %>
+       
+      <% end %>
+       </div>
+    <% end %>
+  </div>
   <% end %>
 </div>

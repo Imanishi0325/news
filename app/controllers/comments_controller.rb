@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   def create
     @comment = Comment.create(text: comment_params[:text], article_id: comment_params[:top_id], user_id: current_user.id)
+    @article = Article.find(params[:top_id])
+    @comments = @article.comments.includes(:user)
   end
   
   def destroy

@@ -2,7 +2,7 @@ class TopController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
   
   def index
-    @articles = Article.order("created_at DESC").page(params[:page]).per(10)
+    @articles = Article.includes(:user).order("created_at DESC").page(params[:page]).per(10)
   end
   
   def new
@@ -38,7 +38,7 @@ class TopController < ApplicationController
   
   def show
     @article = Article.find(params[:id])
-    @comments = @article.comments.includes(:user).all
+    @comments = @article.comments.includes(:user)
   end
   
   private

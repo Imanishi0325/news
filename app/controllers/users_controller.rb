@@ -7,7 +7,7 @@ class UsersController < ApplicationController
     @comments = Comment.where(params[:id])
   end
   
-  def edit_
+  def edit
     @user = User.find(params[:id])
   end
   
