@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @article = @comment.article
+    @comments = Comment.all
     @comment.destroy if @comment.user.id == current_user.id
   end
   

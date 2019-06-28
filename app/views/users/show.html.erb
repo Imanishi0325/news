@@ -1,15 +1,15 @@
 <div class="container">
   <div class="container-user">
+     <% if current_user.image.attached? %>
+      <div class="user-image"><%= image_tag current_user.image %></div>
+        <% else %>
+      <div class="user-image"><%= image_tag 'Noimage_image.png' %></div>
+        <% end %>
       <h5><%= current_user.nickname %><span>さんの投稿</span></h5>
   </div>
   
     <% @articles.each do |article| %>
         <div class="article">
-          <% if current_user.image.attached? %>
-            <div class="user-image"><%= image_tag current_user.image %></div>
-          <% else %>
-            <div class="user-image"><%= image_tag 'Noimage_image.png' %></div>
-          <% end %>
             <p><%= article.text %></p>
             <% if user_signed_in? && current_user.id == article.user_id %>
               <div class="btn"><%= link_to '削除', "/top/#{article.id}", method: :delete %></div>

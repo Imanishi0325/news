@@ -64,6 +64,15 @@ p {
   margin-right: auto;
 }
 
+.container-user {
+  display: inline-block;
+  width: 450px;
+  height: 75px;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  vertical-align: middle;
+}
+
 .comments-form {
   margin-left: 35px;
   margin-right: 40px;
@@ -137,15 +146,6 @@ p {
 
 textarea {
   resize: none;
-}
-
-.container-user {
-  display: inline-block;
-  width: 450px;
-  height: 75px;
-  margin-top: 15px;
-  margin-bottom: 5px;
-  vertical-align: middle;
 }
 
 /*ユーザーページのユーザーの画像を表示するcss*/
