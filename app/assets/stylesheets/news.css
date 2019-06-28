@@ -84,6 +84,7 @@ p {
   margin-left: 35px;
   margin-right: 40px;
   margin-top: 20px;
+  margin-bottom: 20px;
   border: solid 2.5px #ccc;
 }
 
@@ -172,5 +173,5 @@ textarea {
 }
 
 .a {
-  display: block
+  display: inline;
 }
