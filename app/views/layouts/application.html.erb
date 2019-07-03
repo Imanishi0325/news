@@ -37,8 +37,7 @@
               <li><a><%= link_to "ログイン", new_user_session_path, method: :get %></a></li>
               <li><a><%= link_to "新規登録", new_user_registration_path, method: :get %></a></li> 
             <% end %>
-          </ul>
-        </ul>
+              </ul>
       </div>
     </nav>
     
@@ -49,7 +48,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
       $(document).ready(function(){
-        $(".dropdown-button").dropdown();
+        $(".dropdown-button").dropdown({
+        constrain_width:false,
+        hover:true,
+        belowOrigin:true
+        });
       });
     </script>
     

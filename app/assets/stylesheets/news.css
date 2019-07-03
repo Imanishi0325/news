@@ -42,6 +42,18 @@ p {
   padding: 0;
 }
 
+@media (max-width: 768px) {
+  p {
+  overflow: hidden;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #4a4a4a;
+  height: 12em;
+  margin: 0;
+  padding: 0;
+  }
+}
+
 .detail {
   overflow: visible;
   font-family: sans-serif;
