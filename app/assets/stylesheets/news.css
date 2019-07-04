@@ -3,6 +3,8 @@ body, html {
   background-color: #f2fcf9;
 }
 
+ /*@media only screen and (max-width : 992px) {*/
+
 h4 {
   text-align: center;
   font-family: sans-serif;
@@ -48,7 +50,7 @@ p {
   font-family: sans-serif;
   font-weight: bold;
   color: #4a4a4a;
-  height: 12em;
+  height: 16em;
   margin: 0;
   padding: 0;
   }

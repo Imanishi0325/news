@@ -20,25 +20,43 @@
 <!-- Dropdown Structure -->
     <nav class="#00bfa5 teal accent-4">
       <div class="nav-wrapper">
-        <a class="brand-logo" href="/top" >Positive News</a>
-        <ul class="right hide-on-med-and-down">
-          <% if user_signed_in? %>
-          <!-- Dropdown Trigger -->
+        <a href="/top" class="brand-logo" >Positive News</a>
+        <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
             <li><a class="dropdown-button" href="#!" data-activates="dropdown1">メニュー<i class="material-icons right">arrow_drop_down</i></a></li>
               <ul id="dropdown1" class="dropdown-content">
+            <% if user_signed_in? %>
                 <li><a href='/top/new'>投稿する</a></li>
                 <li class="divider"></li>
                 <li><%= link_to "マイページ",user_path(current_user) %></li>
                 <li class="divider"></li>
-                <li><%= link_to "登録情報編集", edit_user_registration_path, method: :get %></li>
+                <li><%= link_to "登録情報", edit_user_registration_path, method: :get %></a></li>
                 <li class="divider"></li>
                 <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
             <% else %>
-              <li><a><%= link_to "ログイン", new_user_session_path, method: :get %></a></li>
-              <li><a><%= link_to "新規登録", new_user_registration_path, method: :get %></a></li> 
+                <li class="divider"></li>
+                <li><%= link_to "ログイン", new_user_session_path, method: :get %></li>
+                <li class="divider"></li>
+                <li><%= link_to "新規登録", new_user_registration_path, method: :get %></li> 
             <% end %>
-              </ul>
-      </div>
+          </ul>
+          </div>
+          <ul class="side-nav" id="mobile-demo">
+             <% if user_signed_in? %>
+                <li><a href='/top/new'>投稿する</a></li>
+                <li class="divider"></li>
+                <li><%= link_to "マイページ",user_path(current_user) %></li>
+                <li class="divider"></li>
+                <li><%= link_to "登録情報", edit_user_registration_path, method: :get %></a></li>
+                <li class="divider"></li>
+                <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
+            <% else %>
+                <li class="divider"></li>
+                <li><%= link_to "ログイン", new_user_session_path, method: :get %></li>
+                <li class="divider"></li>
+                <li><%= link_to "新規登録", new_user_registration_path, method: :get %></li> 
+            <% end %>
+          </ul>
     </nav>
     
     <%= yield %>
@@ -47,13 +65,18 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
     <script>
-      $(document).ready(function(){
+    $(document).ready(function(){
+        $(".dropdown-button").dropdown();
         $(".dropdown-button").dropdown({
         constrain_width:false,
         hover:true,
         belowOrigin:true
         });
       });
+    </script>
+    
+    <script>
+    $(".button-collapse").sideNav();
     </script>
     
     <% flash.each do |type, msg| %>
@@ -66,3 +89,4 @@
     
   </body>
 </html>
+  
